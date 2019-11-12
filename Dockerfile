@@ -6,3 +6,4 @@ RUN apt update && apt install -y git build-essential openssl python-dev libffi-d
 ADD ./requirements.txt requirements.txt
 RUN pip install -r requirements.txt -i http://pypi.douban.com/simple  --trusted-host pypi.douban.com
 WORKDIR /home/jovyan/work
+ADD ./README.md README.md
