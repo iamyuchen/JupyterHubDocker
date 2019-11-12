@@ -39,6 +39,7 @@ c.Authenticator.admin_users = {'taylor', }
 # OAuth with GitHub
 # c.JupyterHub.authenticator_class = 'oauthenticator.GitHubOAuthenticator'
 c.JupyterHub.authenticator_class = 'dummyauthenticator.DummyAuthenticator'
+c.Spawner.default_url = '/lab'
 
 # c.Authenticator.whitelist = whitelist = set()
 # c.Authenticator.admin_users = admin = set()
