@@ -11,7 +11,7 @@ c.JupyterHub.ip = '0.0.0.0'
 c.JupyterHub.port = 8889
 c.JupyterHub.hub_ip = '0.0.0.0'
 c.JupyterHub.hub_port = 8091
-c.DockerSpawner.network_name = 'jupyter_hub_docker_default'
+c.DockerSpawner.network_name = 'jupyterhubdocker_default'
 c.DockerSpawner.remove = True
 c.DockerSpawner.hub_ip_connect = 'jupyterhub'
 c.JupyterHub.allow_named_servers = True
@@ -32,7 +32,7 @@ c.DockerSpawner.environment = {
 }
 c.DockerSpawner.volumes = {
 	'jupyterhub-user-{username}': notebook_dir,
-	'jupyter_hub_docker_data_volume': '/home/jovyan/work/data/'
+	'jupyterhubdocker_data_volume': '/home/jovyan/work/data/'
 	}
 # admin
 c.Authenticator.admin_users = {'taylor', }
