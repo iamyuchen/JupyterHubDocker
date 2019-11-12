@@ -1,0 +1,34 @@
+version: '2'
+
+services:
+  jupyterhub:
+    restart: always
+    build: Jupyterhub
+    image: "${REGISTRY}/${NAMESPACE}/jupyterhub:${TAG}"
+    environment:
+      - "GRANT_SUDO=yes"
+      - "DOCKER_NOTEBOOK_IMAGE=${REGISTRY}/${NAMESPACE}/mynotebook:${TAG}"
+    ports:
+      - "8889:8889"
+      - "8091:8091"
+      - "8000:8000"
+      - "8001:8001"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    command: jupyterhub --debug -f /etc/jupyterhub/jupyterhub_config.py
+
+  mynotebook:
+    restart: "no"
+    build: ./
+    environment:
+      - "GRANT_SUDO=yes"
+    image: "${REGISTRY}/${NAMESPACE}/mynotebook:${TAG}"
+
+
+volumes:
+  data_volume:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${DATA_DIR}
+      o: bind
