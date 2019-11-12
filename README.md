@@ -1,20 +1,21 @@
-#Entity Aligned
+# Entity Aligned
 
 
 
 
 
 
-##使用JuputerHub
+## 使用JuputerHub
 
-###部署
+### 部署
+
 ```shell
 touch .env
 make env ENVFLAG=dev DATADIR=/path/to/your/team/data
 make run
 ```
 
-###使用
+### 使用
 open http://127.0.0.1:8889
 在界面中输入id, 密码随意即可
 !tip:
@@ -25,7 +26,7 @@ open http://127.0.0.1:8889
 	sudo chown jovyan *
 	```
 
-###注意事项
+### 注意事项
 - 每位用户都会获得一个单独的容器作为运行环境
 - 数据是共享的
 - 容器中的代码是编译期加入的, 不一定是最新的
