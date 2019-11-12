@@ -1,0 +1,9 @@
+requests
+scikit-learn
+xlrd
+xlwt
+jieba
+numpy
+pyhanlp
+happybase
+psutil
